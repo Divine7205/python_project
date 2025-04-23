@@ -1,0 +1,37 @@
+{% extends 'form.html' %}
+
+{% block header %}
+Car update
+{% endblock %}
+
+{% block title %}
+Update Car Info
+{% endblock %}
+
+{% block form %}
+<form method="post" enctype="multipart/form-data">
+    <label for="name">Car Name</label>
+    <input type="text" name="name" id="name" value="{{car['name']}}" required>
+    <label for="price">Price</label>
+    <input type="number" name="price" id="price" value="{{ car['rent_price'] }}" required>
+    <label for="brands">Brands</label>
+    <select name="brands" id="brands" >
+        {% for brands in brand %}
+        <option value="{{ brands['brand_name'] }}">{{ brands['brand_name'] }}</option>
+        {% endfor %}
+    </select>
+    <label for="description">Description</label>
+    <textarea name="description" id="description" style="width: 100%;" cols="150" rows="14">
+        {{ car['description'] }}
+    </textarea>
+    <input type="submit" value="Update">
+    <hr>
+
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+</form>
+<form action="{{ url_for('admin.delete_car', id=car['id']) }}">
+    <input type="submit" value="Delete">
+</form>
+{% endblock %}

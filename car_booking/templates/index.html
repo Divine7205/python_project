@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block header %}  {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-dark mb-4 py-3 py-md-0 ps-3 ps-md-5">
+        {% if g.user %}
+        <div class="container-fluid text-light navbar-dark d-flex my-3">
+            <p id="p" class="w-25 navbar-brand text-center">
+                Welcome {{ g.user['username'] }}
+            </p>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="w-75 justify-content-between px-3 collapse navbar-collapse row" id="navbarCollapse">
+                <ul class="row navbar-nav text-sm-start text-center w-100" id="list" >
+                    <li class="col-sm-2 nav-item nav-link"><a href="{{ url_for('user.index') }}">Home</a></li>
+                    <li class="col-sm-2 nav-item nav-link"><a href="{{ url_for('user.product') }}">Cars</a></li>
+                    <li class="col-sm-2 nav-item nav-link"><a href="{{ url_for('user.list') }}">Booking</a></li>
+                    <li class="col-sm-2 nav-item nav-link"><a href="{{ url_for('user.contact') }}">Contact us</a></li>
+                    <li class="col-sm-2 nav-item nav-link"><a href="{{ url_for('user.testify') }}">Testimonial</a> </li>
+                    <li class="col-sm-2 col-md-1 nav-item nav-link"><a id="logout" href="{{ url_for('auth.logout') }}"><img src="{{ url_for('static', filename='exit-svgrepo-com.svg') }}" class="exit-icon"></a></li>
+                    <li class="col-sm-1 nav-item nav-link">
+                        <a href="{{ url_for('user.profile') }}">
+                            {% if g.user['img'] %}
+                            <img src="/img/user/{{ g.user['id'] }}" alt="img" id="prof">
+                            {% else %}
+                            <img src="{{ url_for('static', filename='user.svg') }}" alt="img" id="prof">
+                            {% endif %}
+                        </a>
+                    </li>
+                </ul>
+                <ul class="row navbar-nav w-25 mb-0" style="list-style: none;">
+                    
+                </ul>
+            </div>
+        </div>
+        {% else %}
+        <ul id="list1" class="row w-100 text-center">
+            <li class="col-sm-3"><a href="{{ url_for('user.contact') }}">Contact us</a></li>
+            <li class="col-sm-3"><a href="{{ url_for('user.testify') }}">Testimonial</a></li>
+            <li class="col-sm-3"><a href="{{ url_for('auth.register') }}">Register</a></li>
+            <li class="col-sm-3"><a href="{{ url_for('auth.login') }}">Log In</a></li>
+        </ul>
+        {% endif %}
+    </nav>
+    
+    <div class="container">
+        {% block body %}  {% endblock %}
+    </div>
+
+    <footer class="mt-5">
+        <div class="footer-div bg-dark p-4">
+            
+          <div class="footer-int-div-3 row text-center">
+            <div class="footer-int-div-1 col-md-4">
+                <p class="fs-3 text-white">Subscribe Our Newsletter</p>
+                <p class="fs-6 text-white">Suscribe to our newsletter to get <br>further information </p>
+                <div class="footer-int-div-2 w-100 bg-secondary p-4 row">
+                    <input type="text" placeholder="Enter Your Email" class="email-input p-3 bg-secondary col-8">
+                    <button class="Suscribe-button p-3 col-4">Subscribe</button>
+                </div>
+                
+            </div>
+            <div class="links-div mt-5 col-md-4 col-sm-6">
+              <p class="links-header"> links</p>
+              <a href="{{ url_for('user.index') }}" class="links"><p> <i class="fa fa-house"></i> Home</p></a>
+              <a href="{{ url_for('user.product') }}"  class="links"><p> <i class="fa fa-car"></i> Cars</p></a>
+              <a href="{{ url_for('user.list') }}"  class="links"><p> <i class="fas fa-book"></i> Booking</p></a>
+              <a href="{{ url_for('user.contact') }}"  class="links"><p> <i class="fa fa-phone"></i> Contact-us</p></a>
+              <a href="{{ url_for('user.testify') }}"  class="links"><p> <i class="fa fa-message"></i> Testimonial</p></a>
+            </div>
+        
+        
+            <div class="sociass-div mt-5 col-sm-6 col-md-4">
+              <p class="links-header"> Social</p>
+              <a href="#" class="links" style="color: blue;"><p> <i class="fab fa-facebook"></i> Facebook</p></a>
+              <a href="#"  class="links" style="color: lightblue;"><p> <i class="fab fa-twitter"></i> Twitter</p></a>
+              <a href="#"  class="links" style="color: pink;"><p> <i class="fab fa-instagram"></i> Instagram</p></a>
+            </div>
+           
+          </div>
+        </footer>
+    <script src="{{ url_for('static', filename='js/jquery-3.7.1.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

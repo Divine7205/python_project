@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block header %}
+    Contact us
+{% endblock %}
+
+{% block body %}
+    <article>
+        <fieldset class="container mt-5">
+            <legend>Testimonials</legend>
+            <form method="post">
+                <input type="text" name="name" placeholder="Name">
+                <textarea name="body" id="body" cols="30" rows="10" placeholder="Review"></textarea>
+                <input type="submit" value="submit">
+            </form>
+        </fieldset>
+    </article>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'form.html' %}
+
+{% block header %}
+Login
+{% endblock %}
+
+{% block title %}
+Sign in
+{% endblock %}
+
+{% block form %}
+<form method="post">
+  <label for="email">Email</label><br>
+  <input name="email" id="email" class="w-100" required ><br>
+  <label for="password">Password</label><br>
+  <input type="password" name="password" class="w-100" id="password" required><br>
+  <input type="submit" value="Login"><hr>
+
+  <span>Need an Account? <a href="{{ url_for('auth.register') }}"> Sign up now </a></span>
+  <a href="{{ url_for('auth.forgot') }}" style="float:right">Forgot password</a>
+  {% for message in get_flashed_messages() %}
+      <div class="flash">{{ message }}</div>
+  {% endfor %}
+</form>
+{% endblock %}

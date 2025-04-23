@@ -1,0 +1,39 @@
+{% extends 'admin/admin.html' %}
+
+{% block title %}
+    Manage Bookings
+{% endblock %}
+
+
+{% block content %}
+<h1 class="display-2 fw-bold text-uppercase text-center mb-5" >Bookings</h1>
+<div class="d-flex flex-wrap">
+    {% for car in book %}
+    <div class="m-3 w-100">
+        <div class="p-4 bg-light row mb-4 position-relative">
+            <div class="col-lg-3 col-md-5">
+                <img class="img-fluid mb-4 car" src="{{ url_for('img.cars', car_id= car['vehicle_id']) }}" alt="">
+            </div>
+            <div class="col-lg-9 col-md-7 text-start">
+                <h4 class="text-uppercase mb-4">{{ car['name'] }}</h4>
+                <p>#{{ car['rent_price'] }}.00/Day</p>
+                <p>Registered on: <span class="text-primary fw-bold">{{ car['register'] }}</span></p>
+                <p>Date of use: <span class="text-primary fw-bold">{{ car['date_use'] }}</span></p>
+                <p>BY: <spqn class="text-primary fw-bold">{{ car['username'] }}</spqn></p>
+                {% if car['status'] == "Waiting" %}
+                <!-- <span class="text-secondary">Waiting for response</span> -->
+                <button type="button" class="bg-success border-success-subtle"><a href="{{ url_for('admin.confirm', id=car['id']) }}" class="text-black text-decoration-none">Confirm</a></button>
+                <button type="button" class="bg-danger border-danger-subtle"><a href="{{ url_for('admin.reject', id=car['id']) }}" class="text-black text-decoration-none">Reject</a></button>
+                {% elif car['status'] == "Confirmed" %}
+                <span class="text-success fw-bold">Approved</span>
+                {% else %}
+                <span class="text-danger fw-bold">Rejected</span>
+                {% endif %}
+            </div>
+            
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+   

@@ -1,0 +1,46 @@
+{% extends 'form.html' %}
+
+{% block header %}
+Register
+{% endblock %}
+
+{% block title %}
+Sign up
+{% endblock %}
+
+{% block form %}
+<form method="post" enctype="multipart/form-data">
+    <label for="username">User Name</label><br>
+    <input type="text" name="username" id="username" required><br>
+    <label for="email">Email</label><br>
+    <input name="email" id="email" required ><br>
+
+    <label for="password">Password</label><br>
+    <input type="password" name="password" id="password" required><br>
+
+    <label for="profile">Profile picture</label><br>
+    <input type="file" name="profile" id="profile"><br>
+
+    <label for="address">Address</label><br>
+    <input type="text" name="address" id="address" required><br>
+
+    <label for="dob">Date of birth</label><br>
+    <input type="date" name="dob" id="dob" required><br>
+
+    <label for="sec_que">Security Question</label><br>
+    <select name="sec_que" id="sec_que" class="my-2">
+        <option value="favorite team">What is your favorite Team?</option>
+        <option value="first pet">What was the name of your first pet</option>
+        <option value="distant relative">Name one of your distant relatives</option>
+    </select><br>
+
+    <label for="answer">Answer</label><br>
+    <input type="text" name="answer" id="answer" required><br>
+    <input type="submit" value="Register"><br>
+    <hr>
+    <span>Already have an account? <a href="{{ url_for('auth.login') }}"> Sign In </a></span>
+    {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+{% endfor %}
+</form>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'admin/admin.html' %}
+
+{% block title %}
+    Users
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <h1 class="display-2 fw-bold text-uppercase text-center mb-5" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Users</h1>
+    <div class="m-3 row">
+        {% for user in users %}
+        <div class="card col-md-5 mx-4 my-3 bg-light p-4">
+            <div class="card-title text-center">
+                {% if user['img'] %}
+                <img src="{{ url_for('img.user', id=user['id']) }}" alt="img" style="width: 70px;height: 70px;" class="img-fluid rounded-circle">
+                {% else %}
+                <img src="{{ url_for('static', filename='user.svg') }}" alt="img" style="width: 70px;height: 70px;" class="img-fluid rounded-circle">
+                {% endif %}
+                
+            </div>
+            <div class="card-body">
+                <p>Username: <span class="ms-3">{{ user['username'] }}</span></p>
+                <p>Email: <span class="ms-3">{{ user['email'] }}</span></p>
+                <p>Address: <span class="ms-3">{{ user['address'] }}</span></p>
+                <p>Date of Birth: <span class="ms-3">{{ user['date_of_birth'] }}</span></p>
+                {% if user['isAdmin'] == "True" %}
+                    <p> Admin </p>
+                {% endif %}
+            </div>
+            
+            <div class="col-md-8"></div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

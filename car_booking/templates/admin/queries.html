@@ -1,0 +1,28 @@
+{% extends 'admin/admin.html' %}
+
+{% block title %}
+    Queries
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="card bg-light p-4">
+            <h3 class="card-title"> Queries </h3>
+            <div class="card-body p-3">
+                {% for query in queries %}
+                <div class="card p-2 bg-white">
+                    <h4 class="card-title">By {{ query['name'] }} <span class="fs-6" style="float: right;"><a href="{{ url_for('admin.delete_q', id=query['id']) }}">delete</a></span></h4>
+                    <br>
+                    <h6 class="ms-3 f">Subject: {{ query['subject'] }}</h6>
+                    <p class="card-body">
+                        {{ query['message'] }}
+                    </p>
+                </div>
+                {% if not loop.last %}
+                  <hr>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block header %}
+    Cars
+{% endblock %}
+
+{% block body %}
+    <h1 class="display-2 fw-bold text-uppercase text-center mb-5" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Find Your Car</h1>
+    <div class="row">
+        {% for car in cars %}
+        <div class="col-lg-4 col-md-6 mb-2">
+            <div class="rent-item active mb-4">
+                <img class="img-fluid mb-4 car" src="/img/cars/{{ car['id'] }}" alt="">
+                <h4 class="text-uppercase mb-4">{{ car['name'] }}</h4>
+                <h6>model: {{ car['brands'] }}</h6>
+                <a class="btn btn-primary px-3" href="/book/{{car['id']}}">#{{ car['rent_price'] }}.00/Day</a>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}

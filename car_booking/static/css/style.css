@@ -1,0 +1,433 @@
+body{
+    background-color: aliceblue;
+    font-size: small;
+}
+
+nav{
+    display: flex;
+}
+
+nav a{
+    color: grey;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: blueviolet;
+}
+
+.exit-icon{
+    /* height: 20px; */
+    width: 25px;
+}
+
+.exit-icon-button{
+/* margin-right: 20px; */
+padding: 6px;
+background-color: rgb(187,150,236);
+border-radius: 50%;
+border-style: none;
+/* height: 30px;
+width: 30px; */
+}
+
+h1{
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 130px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: oblique;
+}
+.car{
+    color:rgb(239, 96, 45);
+}
+h2{
+    margin-bottom: 60px;
+    font-size: 25px;
+    color:rgb(154, 153, 153);
+    margin-top: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+}
+
+.header-section{
+    background-size: 450px;
+    width: 100%;
+    text-align: center;
+}
+
+.logo{
+    width: 45px;
+    margin-bottom: 0;
+}
+.logo-button{
+    margin-bottom: 0;
+    display: inline-block;
+    border-style: none;
+    background-color: rgb(187,150,236);
+    border-radius: 35px;
+   width: 70px;
+   height: 70px;
+}
+
+
+#prof{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.p{
+    margin-left:20PX ;
+    display: inline-block;
+    width: 18vw;
+}
+#list, #lists{
+    width: 50%;
+    list-style: none;
+    /* display: flex;
+    justify-content: space-evenly;
+    align-items: center; */
+}
+
+#list1{
+    margin: 10px 40px;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#list1 a{
+    padding: 5px;
+    margin: 0 15px;
+}
+
+#list li{
+    cursor: pointer;
+}
+
+input, select,textarea{
+    width: 100%;
+}
+
+form input, select{
+    margin: 10px auto;
+}
+
+form input[type=submit]{
+    background-color: white;
+    border-color: lightblue;
+    width: auto;
+}
+
+#title{
+    font-size: 6rem;
+    font-family: cursive;
+}
+
+#sub{
+    color:gray;
+}
+
+.image{
+    width: 8rem;
+    height: 7em;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.edits{
+    display: flex;
+    width: auto;
+    float: right;
+    height: 115px;
+    align-items: flex-end;
+}
+
+.rent-item {
+    height: max-content;
+    padding: 30px;
+    text-align: center;
+    background: #F0F1F8 ;
+    transition: .5s;
+}
+.rent-item:hover {
+    background: #2B2E4A;
+}
+
+.rent-item h4 {
+    transition: .5s;
+    text-decoration: none;
+}
+
+.rent-item:hover p, .rent-item:hover span{
+    color: #f4f5f8;
+    transition: .5s;
+}
+
+.rent-item:hover h4 {
+    color: #f4f5f8;
+}
+
+.car{
+height: 200px
+}
+
+.edit{
+    width: 20px;
+    height: 20px;
+    color: grey;
+}
+
+
+
+.middle-page-section-1{
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* .customer-satisfaction-container{
+
+} */
+.customer-satisfaction-image-div{
+text-align: center;
+width: 90px;
+border-radius: 30px;
+ background-color: rgb(163, 134, 186, .5);
+}
+.customer-satisfaction-image{
+    width: 80px;
+}
+.Customer-Satisfaction{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+.Customer-Satisfaction-paragraph{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: rgb(120, 116, 116);
+}
+
+
+/* .faster-booking-container{
+
+} */
+.faster-booking-image-div{
+    text-align: center;
+    width: 90px;
+    border-radius: 30px;
+    background-color: rgba(233, 216, 151, 0.5);
+}
+.faster-booking-image{
+  width: 80px;
+}
+.Faster-Bookings{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+.Faster-Bookings-paragraph{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: rgb(120, 116, 116);
+}
+
+
+
+
+
+
+
+/* .pickup-location-container{
+
+} */
+.location-image-div{
+    text-align: center;
+    width: 90px;
+    border-radius: 30px;
+    background-color: rgb(239, 159, 141, .5);
+}
+.location-image{
+  width: 80px;
+}
+.Any-Pickup-Location{
+    font-style: normal;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+.Any-Pickup-Location-paragraph{
+ font-family: 'Times New Roman', Times, serif;
+ font-size: 20px;
+ color: rgb(120, 116, 116);
+}
+
+
+
+.middle-page-section-2{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-bottom: 110px;
+    width: 100%;
+}
+.middle-page-section-2-int-div-1{
+    width: 55%;
+}
+.Welcome-to-FastCars{
+    margin: 0;
+    font-weight: bolder;
+}
+.Thanks-for-choosing-FastCars{
+    color: rgb(120, 116, 116);
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+.learn-more-buton{
+    background-color: rgb(172, 118, 243);
+    color: white;
+    margin: 0;
+    font-size: 17px;
+    width: 200px;
+    height: 60px;
+    border-radius: 10px;
+    border-style: none;
+    transition: 0.5s;
+}
+.learn-more-buton:hover{
+   background-color: rgb(159, 90, 249);
+   
+}
+
+
+.middle-page-section-2-int-div-2{
+    width: 45%;
+}
+.car-rental-image{
+    border-radius: 25px;
+    width: 100%;
+    height: 450px;
+}
+
+
+.website-logo{
+    display: inline-block;
+    margin: 0;
+    color: white;
+    margin-left:20px;
+    width: 150px;
+    font-style: oblique;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+.footer-div{
+    margin: auto;
+    width: 100%;
+    background-color: #473b7c;
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+}
+.footer-int-div-1{
+    margin-bottom: 40px;
+    padding-top: 40px;
+    width: 100%;
+    text-align: center;
+    
+}
+.Subscribe-Our-Newsletter{
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 50px;
+}
+.Subscribe-Our-Newsletter-p{
+    color: white;
+    margin: 0;
+  font-size: 25px;
+}
+
+
+.footer-int-div-2{
+    margin: auto;
+    background-color: #2a2d51;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+.email-input{
+    padding-left: 50px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2a2d51;
+    /* opacity: ; */
+    width: 60%;
+    
+}
+.email-input::placeholder{
+ font-size: 18px;
+ color: white;
+}
+.email-input[type=text]:focus {
+    border: none;
+    border-style: none;
+}
+
+.Suscribe-button{
+    background-color: rgb(114, 90, 220);
+    width: 30%;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    color: white;
+}
+
+
+
+.footer-int-div-3{
+    margin-top: 40px;
+    width: 100%;
+    margin: auto;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+.footer-article{
+    color: white;
+    font-size: 3vh;
+}
+.links-header{
+    font-size: 5vh;
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+.links{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+@media screen and (max-width: 992px) {
+    .header-section{
+        background-color: inherit;
+        background-image: none;
+    }
+
+    .hide{
+        display: none;
+    }
+}

@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+
+{% block header %}
+    Contact us
+{% endblock %}
+
+{% block body %}
+    <article class="row">
+        
+        <fieldset class="container col-md-7 mt-5">
+            <legend>Contact Us</legend>
+            <form method="post">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea name="body" id="body" cols="30" rows="10" required placeholder="Message"></textarea>
+                <input type="submit" value="submit">
+            </form>
+        </fieldset>
+        <div class="col-md-5">
+            <div class="bg-secondary d-flex flex-column justify-content-center px-5 mb-4" style="height: 435px;">
+                <div class="d-flex mb-3">
+                    <i class="fa fa-2x fa-map-marker-alt text-light flex-shrink-0 me-3"></i>
+                    <div class="mt-n1">
+                        <h5 class="text-light">Head Office</h5>
+                        <p>123 Street, New York, USA</p>
+                    </div>
+                </div>
+                <div class="d-flex mb-3">
+                    <i class="fa fa-2x fa-map-marker-alt text-light flex-shrink-0 me-3"></i>
+                    <div class="mt-n1">
+                        <h5 class="text-light">Branch Office</h5>
+                        <p>123 Street, New York, USA</p>
+                    </div>
+                </div>
+                <div class="d-flex mb-3">
+                    <i class="fa fa-2x fa-envelope-open text-light flex-shrink-0 me-3"></i>
+                    <div class="mt-n1">
+                        <h5 class="text-light">Customer Service</h5>
+                        <p>customer@example.com</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <i class="fa fa-2x fa-envelope-open text-light flex-shrink-0 me-3"></i>
+                    <div class="mt-n1">
+                        <h5 class="text-light">Return & Refund</h5>
+                        <p class="m-0">refund@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+{% endblock %}

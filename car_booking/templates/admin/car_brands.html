@@ -1,0 +1,29 @@
+{% extends 'form.html' %}
+
+{% block header %}
+Register Brands
+{% endblock %}
+
+{% block title %}
+Register Car Brand
+{% endblock %}
+
+{% block form %}
+<form method="post">
+    <label for="name">Brand Name</label>
+    <input type="text" name="name" id="name" required>
+    <input type="submit" value="Register"><hr>
+    {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+</form>
+{% endblock %}
+
+
+
+
+
+
+
+
+

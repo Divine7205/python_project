@@ -1,0 +1,37 @@
+{% extends 'form.html' %}
+
+{% block header %}
+Update
+{% endblock %}
+
+{% block title %}
+Update Profile
+{% endblock %}
+
+{% block form %}
+<form method="post" enctype="multipart/form-data">
+    <label for="username">User Name</label><br>
+    <input type="text" name="username" id="username" value="{{ user['username'] }}" required><br>
+
+    <label for="email">Email</label><br>
+    <input name="email" id="email" value="{{ user['email'] }}" required ><br>
+
+    <label for="profile">Update Profile picture</label><br>
+    <input type="file" name="profile" id="profile"><br>
+
+    <label for="address">Address</label><br>
+    <input type="text" name="address" value="{{ user['address'] }}" id="address" required><br>
+
+    <label for="dob">Date of birth</label><br>
+    <input type="date" name="dob" value="{{ user['date_of_birth'] }}" id="dob" required><br>
+    <input type="submit" value="Update">
+    <hr>
+    
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+</form>
+<form action="{{ url_for('user.delete_user') }}">
+    <input type="submit" value="Delete">
+</form>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'form.html' %}
+
+{% block header %}
+Brands
+{% endblock %}
+
+{% block title %}
+Update Brands
+{% endblock %}
+
+{% block form %}
+<form method="post">
+    <label for="name">Brand Name</label><br>
+    <input type="text" name="name" id="name" value="{{ brand['brand_name'] }}" required><br>
+
+    <input type="submit" value="Update">
+    <hr>
+
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+</form>
+<form action="{{ url_for('admin.delete_brand', id=brand['id'] ) }}">
+    <input type="submit" value="Delete">
+</form>
+{% endblock %}

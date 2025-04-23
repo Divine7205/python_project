@@ -1,0 +1,22 @@
+{% extends 'admin/admin.html' %}
+
+{% block title %}
+    Car Brands
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="bg-light card p-4">
+            <h3 class="card-title">Brands</h3>
+            <ul class="card-body ts-2" style="list-style: none;">
+                {% for brand in brands %}
+                    <li>
+                        <p>{{ brand['brand_name'] }} <span style="float: right;"><a href="{{ url_for('admin.update_brand', ids=brand['id']) }}">update</a></span> </p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

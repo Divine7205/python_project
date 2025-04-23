@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+
+{% block header %}
+    Cars
+{% endblock %}
+
+{% block body %}
+    <h1 class="display-2 fw-bold text-uppercase text-center mb-5" >Your Cars</h1>
+    <div class="d-flex flex-wrap">
+        {% for car in book %}
+        <div class="m-3 w-100">
+            <div class="rent-item row mb-4">
+                <div class="col-sm-3">
+                    <img class="img-fluid mb-4 car" src="{{ url_for('img.cars', car_id= car['vehicle_id']) }}" alt="">
+                </div>
+                <div class="col-sm-9 text-start">
+                    <h4 class="text-uppercase mb-4">{{ car['name'] }}</h4>
+                    <p>#{{ car['rent_price'] }}.00/Day</p>
+                    <p>Registered on: <span class="text-primary fw-bold">{{ car['register'] }}</span></p>
+                    <p>Date of use: <span class="text-primary fw-bold">{{ car['date_use'] }}</span></p>
+                    <p>
+                        {% if car['status'] == "Waiting" %}
+                        <span class="text-secondary">Waiting for response</span>
+                        {% elif car['status'] == "Confirmed" %}
+                        <span class="text-success">Approved</span>
+                        {% else %}
+                        <span class="text-danger">Sorry, Your request has been rejected</span>
+                        {% endif %}
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

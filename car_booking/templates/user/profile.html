@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+<body>
+    <div class="container w-50 bg-light my-5 p-5 text-center">
+        <div class="img mb-5">
+            {% if user['img'] %}
+            <img src="/{{ g.user['id'] }}" alt="img" class=" image">
+            {% else %}
+            <img src="{{ url_for('static', filename='user.svg') }}" alt="img" class="image">
+            {% endif %}
+            <div class="d-flex edits">
+                <a href="{{ url_for('user.update') }}"><img src="{{ url_for('static', filename='pen.svg') }}" alt="edit" class="edit"/></a>
+            </div>
+            
+        </div>
+        <hr>
+        <div class="text-start my-5 fs-5">
+            <p>Name: <span>{{ user['username'] }}</span> </p>
+            <p>Email: <span>{{ user['email'] }}</span> </p>
+            <p>Address: <span>{{ user['address'] }}</span> </p>
+            <p>Date of Birth: <span>{{ user['date_of_birth'] }}</span> </p>
+            <p>password: <span>***********</span> </p>
+            <p>Answer: <span>{{ user['security_answer'] }}</span> </p>
+            {% if g.user['isAdmin'] == "True" %}
+            <a href="{{ url_for('admin.home') }}"> Manage</a>
+            {% endif %}
+            <span class="float-end"><a href="{{ url_for('user.change') }}">Change password</a></span>
+        </div>
+    </div>
+<!--    <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>-->
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

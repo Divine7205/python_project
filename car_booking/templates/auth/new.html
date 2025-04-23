@@ -1,0 +1,25 @@
+{% extends 'form.html' %}
+
+{% block header %}
+New password
+{% endblock %}
+
+{% block title %}
+Create new password
+{% endblock %}
+
+{% block form %}
+<form method="post" enctype="multipart/form-data">
+    <label for="new">New password</label><br>
+    <input type="password" name="new" id="new" required ><br>
+
+    <label for="confirm">Confirm password</label><br>
+    <input type="password" name="confirm" id="confirm" required><br>
+
+    <input type="submit" value="Change">
+    <hr>
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+</form>
+{% endblock %}

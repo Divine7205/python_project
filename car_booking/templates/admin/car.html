@@ -1,0 +1,30 @@
+{% extends 'admin/admin.html' %}
+
+{% block title %}
+    Manage Cars
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <h1 class="display-2 fw-bold text-uppercase text-center mb-5" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Cars</h1>
+    <div class="m-3 row">
+        {% for car in cars %}
+        <div class="w-100">
+            <div class="p-4 bg-light row mb-4" style="border-radius: 20px;">
+                <div class="col-lg-4 col-md-6">
+                    <img class="img-fluid mb-4 car" src="{{ url_for('img.cars', car_id= car['id']) }}" alt="">
+                </div>
+                <div class="col-lg-8 col-md-6 text-start">
+                    <h4 class="text-uppercase mb-4">{{ car['name'] }} <span class="float-end fs-6"><a href="{{ url_for('admin.update_car', id=car['id']) }}">update</a></span> </h4>
+                    <p>#{{ car['rent_price'] }}.00/Day</p>
+                    <p>Model: {{ car['brands'] }}</p>
+                    <p>{{ car['description'] }}</p>
+                </div>
+                
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

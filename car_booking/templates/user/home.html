@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+
+{% block header %}
+    Home
+{% endblock %}
+
+{% block body %}
+    <div class="header-section w-100 container m-3 p-5">
+    <h1 id="title" class="display-1" style="font-size: 8rem;">Find a Car</h1>
+    <!-- <h1> find a <span class="car">car</span></h1> -->
+    <h3 class="fs-5" id="sub">from as low as $150 per day with limited <br>time offer discounts </h3>
+    <button class="logo-button"><img src="{{ url_for('static', filename='img/logo2.png') }}" class="logo"></button>
+    <div style="height: 3rem;" class="hide"></div>
+    </div>
+
+    <div class="middle-page-section-1 my-5 row" style="font-family: cursive;">
+        <div class="customer-satisfaction-container my-4 col-md-4">
+         <div class="customer-satisfaction-image-div"> <img src="/static/img/customer-ssatisfaction-image.png" class="customer-satisfaction-image"></div>
+         <p class="Customer-Satisfaction">Customer Satisfaction</p>
+         <p class="Customer-Satisfaction-paragraph">Get ready to hit the road in style <br>and experince the ultimate driving adventure,<br>
+           with our top-notch fleet, seamless rental process<br> and exceptional customer service.
+         </p>
+        </div>
+   
+   
+        <div class="faster-booking-container my-4 col-md-4">
+         <div class="faster-booking-image-div"> <img src="/static/img/faster-booking-image.png" class="faster-booking-image"></div>
+          <p class="Faster-Bookings">Faster Bookings</p>
+          <p class="Faster-Bookings-paragraph">Booking a car has never been easier with our <br>lightning-fast booking process, you can secure <br>your
+           dream ride in just a few clicks.</p>
+        </div>
+   
+   
+        <div class="pickup-location-container my-4 col-md-4">
+         <div class="location-image-div"> <img src="/static/img/location-image.png" class="location-image"></div>
+          <p class="Any-Pickup-Location">Any Pickup Location</p>
+          <p class="Any-Pickup-Location-paragraph">we offer the convienience of pick-up location <br>wherever you need them. we'll make sure <br>
+           you can pick up your rental car hassle-free.
+          </p>
+        </div>
+
+        <div style="height: 6rem;" class="hide"></div>
+    </div>
+
+    <div class="middle-page-section-2 my-5 row">
+        <div class="middle-page-section-2-int-div-1 col-md-6 my-3"> <p class="Welcome-to-FastCars display-2 fw-bold"> Welcome to<br> FastCars.</p>
+            <p class="Thanks-for-choosing-FastCars"> Thanks for choosing FastCars car rental as your go-to destination for <br>
+              all your car
+              rental needs. We're thrilled to have you on board<br>so, buckle up and get ready to hit the road in style 
+              with FastCars.
+            </p>  
+            <a href=""><button class="learn-more-buton"> Learn More &#8594;</button></a>
+        </div>
+      
+      
+        <div class="middle-page-section-2-int-div-2 col-md-6">
+          <img src="static/img/car-rental1.jpg" class="img car-rental-image">
+        </div>
+        <div style="height: 6rem;" class="hide"></div>
+      </div>
+      
+        
+{% endblock %}

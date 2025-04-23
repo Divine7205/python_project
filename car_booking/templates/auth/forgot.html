@@ -1,0 +1,32 @@
+{% extends 'form.html' %}
+
+{% block header %}
+forgot password
+{% endblock %}
+
+{% block title %}
+Check Is You
+{% endblock %}
+
+{% block form %}
+<form method="post" enctype="multipart/form-data">
+    <label for="email">Email</label><br>
+    <input type="text" name="email" id="email" required><br>
+
+    <label for="sec">Security question</label><br>
+    <select name="sec" id="sec" class="my-2">
+        <option value="favorite team">What is your favorite Team?</option>
+        <option value="first pet">What was the name of your first pet</option>
+        <option value="distant relative">Name one of your distant relatives</option>
+    </select><br>
+
+    <label for="answer">Anwser</label><br>
+    <input type="text" name="answer" id="answer" required><br>
+
+    <input type="submit" value="Check">
+    <hr>
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+</form>
+{% endblock %}

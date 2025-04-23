@@ -1,0 +1,29 @@
+{% extends 'form.html' %}
+
+{% block header %}
+Update
+{% endblock %}
+
+{% block title %}
+Update Testimony
+{% endblock %}
+
+{% block form %}
+<form method="post" enctype="multipart/form-data">
+    <label for="name">Name</label><br>
+    <input type="text" name="name" id="name" value="{{ test['name'] }}" required><br>
+
+    <label for="body">Message</label><br>
+    <textarea id="body" name="body">
+        {{ test['body'] }}
+    </textarea>
+    <input type="submit" value="Update">
+    <hr>
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+</form>
+<form action="{{ url_for('user.delete_user') }}">
+    <input type="submit" value="Delete">
+</form>
+{% endblock %}

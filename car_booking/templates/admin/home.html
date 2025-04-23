@@ -1,0 +1,48 @@
+{% extends 'admin/admin.html' %}
+
+{% block title %}
+    Admin Portal
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <h4 class="card-title display-4 fw-bold">Dashboard</h4>
+        <div class="card my-3 p-2 bg-light border-0 my-4 mx-5">
+            <div class="card-body" style="font-family: monospace;">
+                <p class="card-text fs-5">
+                    Number of users {{ num }}
+                </p>
+            </div>
+        </div>
+        <div class="card my-3 p-2 bg-light border-0 my-4 mx-5">
+            <div class="card-body" style="font-family: monospace;">
+                <p class="card-text fs-5">
+                    Number of cars {{ num1 }}
+                </p>
+            </div>
+        </div>
+        <div class="card my-3 p-2 bg-light border-0 my-4 mx-5">
+            <div class="card-body" style="font-family: monospace;">
+                <p class="card-text fs-5">
+                    Number of bookings {{ book }}
+                </p>
+            </div>
+        </div>
+        <div class="card my-3 p-2 bg-light border-0 my-4 mx-5">
+            <div class="card-body" style="font-family: monospace;">
+                <p class="card-text fs-5">
+                    Number of testimonies {{ num2 }}
+                </p>
+            </div>
+        </div>
+        <div class="card my-3 p-2 bg-light border-0 my-4 mx-5">
+            <div class="card-body" style="font-family: monospace;">
+                <p class="card-text fs-5">
+                    Number of queries {{ num3 }}
+                </p>
+            </div>
+        </div>
+   </div>
+{% endblock %}
+   
